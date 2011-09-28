@@ -21,40 +21,27 @@ public class ManajemenPesertaWS {
 
     static ManajemenPesertaService service = new ManajemenPesertaServiceDummy();
     
-    /** This is a sample web service operation */
     @WebMethod(operationName = "hello")
     public String hello(@WebParam(name = "name") String txt) {
         return "Hello " + txt + " !";
     }
 
-    /**
-     * Web service operation
-     */
     @WebMethod(operationName = "findPesertaByNomerPeserta")
     public Peserta findPesertaByNomerPeserta(@WebParam(name = "nomerPeserta") String nomerPeserta) {
         return service.findPesertaByNomerPeserta(nomerPeserta);
     }
 
-    /**
-     * Web service operation
-     */
     @WebMethod(operationName = "simpan")
     public Peserta simpan(@WebParam(name = "peserta") Peserta p) {
         service.simpan(p);
         return p;
     }
 
-    /**
-     * Web service operation
-     */
     @WebMethod(operationName = "findSemuaPeserta")
     public List findSemuaPeserta(@WebParam(name = "start") Integer start, @WebParam(name = "rows") Integer rows) {
         return service.findSemuaPeserta(start, rows);
     }
 
-    /**
-     * Web service operation
-     */
     @WebMethod(operationName = "countSemuaPeserta")
     public Long countSemuaPeserta() {
         return service.countSemuaPeserta();
