@@ -1,0 +1,6 @@
+# Maven ignore
+target
+
+# Netbeans Ignore
+private
+dist
