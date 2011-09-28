@@ -4,3 +4,7 @@ target
 # Netbeans Ignore
 private
 dist
+
+#Eclipse Ignore
+.classpath
+.project
