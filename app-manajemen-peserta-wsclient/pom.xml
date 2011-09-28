@@ -10,7 +10,6 @@
   <groupId>belajar</groupId>
   <artifactId>app-manajemen-peserta-wsclient</artifactId>
   <version>0.1.1-SNAPSHOT</version>
-  <name>app-manajemen-peserta-wsclient</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,5 +21,73 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.sun.xml.ws</groupId>
+      <artifactId>webservices-rt</artifactId>
+      <version>1.4</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
+    <name>JAX-WS Client</name>
+  <build>
+    <resources>
+      <resource>
+        <targetPath>META-INF</targetPath>
+        <directory>src</directory>
+        <includes/>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxws-maven-plugin</artifactId>
+        <version>1.10</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>wsimport</goal>
+            </goals>
+            <configuration>
+              <wsdlFiles>
+                <wsdlFile>localhost_8080/aplikasi-manajemen-peserta-jaxws/ManajemenPesertaWS.wsdl</wsdlFile>
+              </wsdlFiles>
+              <wsdlLocation>http://localhost:8080/aplikasi-manajemen-peserta-jaxws/ManajemenPesertaWS?WSDL</wsdlLocation>
+              <staleFile>${project.build.directory}/jaxws/stale/ManajemenPesertaWS.stale</staleFile>
+            </configuration>
+            <id>wsimport-generate-ManajemenPesertaWS</id>
+            <phase>generate-sources</phase>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>javax.xml</groupId>
+            <artifactId>webservices-api</artifactId>
+            <version>1.4</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <sourceDestDir>${project.build.directory}/generated-sources/jaxws-wsimport</sourceDestDir>
+          <xnocompile>true</xnocompile>
+          <verbose>true</verbose>
+          <extension>true</extension>
+          <catalog>${basedir}/src/jax-ws-catalog.xml</catalog>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <repositories>
+    <repository>
+      <url>http://download.java.net/maven/2</url>
+      <id>metro</id>
+      <layout>default</layout>
+      <name>Repository for library[metro]</name>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <name>java.net</name>
+      <id>java.net</id>
+      <url>http://download.java.net/maven/2/</url>
+    </pluginRepository>
+  </pluginRepositories>
 </project>
