@@ -14,7 +14,8 @@
         <module>aplikasi-manajemen-peserta-domain</module>
         <module>aplikasi-manajemen-peserta-service</module>
         <module>aplikasi-manajemen-peserta-jaxws</module>
-    <module>app-manajemen-peserta-wsclient</module>
+		<module>app-manajemen-peserta-wsclient</module>
+		<module>aplikasi-manajemen-peserta-springmvc</module>
   </modules>
 
     <!-- Shared version number properties -->

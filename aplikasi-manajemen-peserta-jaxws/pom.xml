@@ -10,7 +10,7 @@
 
 	<artifactId>aplikasi-manajemen-peserta-jaxws</artifactId>
 	<packaging>war</packaging>
-	<name>Expose service dengan Jax-WS</name>
+	<name>Expose Service Dengan JAX-WS</name>
  <repositories>
   <repository>
    <url>http://download.java.net/maven/2</url>
