@@ -82,5 +82,5 @@ public class ManajemenPesertaServiceDummy implements ManajemenPesertaService {
         }
         return new Long(hasil.size());
     }
-    
+
 }
