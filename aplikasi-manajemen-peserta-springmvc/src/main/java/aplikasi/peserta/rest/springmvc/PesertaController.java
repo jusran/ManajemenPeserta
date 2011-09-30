@@ -5,11 +5,17 @@
 package aplikasi.peserta.rest.springmvc;
 
 import aplikasi.peserta.domain.Peserta;
+import aplikasi.peserta.helper.PesertaConverter;
 import aplikasi.peserta.service.ManajemenPesertaService;
 import aplikasi.peserta.service.impl.dummy.ManajemenPesertaServiceDummy;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.omg.PortableServer.REQUEST_PROCESSING_POLICY_ID;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  *
@@ -52,13 +59,13 @@ public class PesertaController {
     }
     
     @RequestMapping(value="/multi/", method= RequestMethod.POST)
-    @ResponseBody
-    public Peserta simpanBanyak(@RequestBody List<Peserta> p) {
-        for (Peserta peserta : p) {
-            service.simpan(peserta);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void simpanBulk(@RequestBody List<Map<String, Object>> p, HttpServletRequest req, HttpServletResponse res) {
+        for (Map<String, Object> peserta : p) {
+            service.simpan(PesertaConverter.fromMap(peserta));
         }
-//        service.simpan(p);
-        return p.get(0);
+        String reqUrl = req.getContextPath() + "/rest/peserta/";
+        res.setHeader("Location", reqUrl);
     }
 
     @RequestMapping(value="/cari/", method= RequestMethod.GET)

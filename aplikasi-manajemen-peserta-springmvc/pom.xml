@@ -36,5 +36,11 @@
     <artifactId>jaxb-api-osgi</artifactId>
     <version>2.2.4</version>
 </dependency>
+	 <dependency>
+	  <groupId>javax.servlet</groupId>
+	  <artifactId>servlet-api</artifactId>
+	  <version>2.4</version>
+	  <type>jar</type>
+	 </dependency>
 	</dependencies>
 </project>
