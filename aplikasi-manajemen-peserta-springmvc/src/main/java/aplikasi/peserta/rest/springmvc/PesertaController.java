@@ -103,5 +103,11 @@ public class PesertaController {
         return service.findPesertaByNomerPeserta(noka);
     }
     
+    @RequestMapping(value="/count/", method= RequestMethod.GET)
+    @ResponseBody
+    public Long countSemuaPeserta() {
+        return service.countSemuaPeserta();
+    }
+    
     
 }

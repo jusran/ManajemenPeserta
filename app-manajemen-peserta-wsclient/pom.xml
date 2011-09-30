@@ -28,7 +28,7 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-    <name>JAX-WS Client</name>
+    <name>Client SOAP JAX-WS</name>
   <build>
     <resources>
       <resource>
