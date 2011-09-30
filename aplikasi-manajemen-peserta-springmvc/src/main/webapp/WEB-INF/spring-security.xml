@@ -17,7 +17,7 @@
                          http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
  
     <http auto-config="true">
-        
+        <http-basic/> <!-- diaktifkan, tampil form login -->
         <intercept-url pattern="/**" access="ROLE_USER" />
     </http>
  

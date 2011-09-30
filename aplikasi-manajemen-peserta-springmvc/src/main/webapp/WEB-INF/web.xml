@@ -20,6 +20,7 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     
+    <!-- http://static.springsource.org/spring-security/site/docs/3.0.x/reference/ns-config.html#ns-getting-started -->
     <filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
