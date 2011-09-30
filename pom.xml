@@ -16,11 +16,12 @@
         <module>aplikasi-manajemen-peserta-jaxws</module>
 		<module>app-manajemen-peserta-wsclient</module>
 		<module>aplikasi-manajemen-peserta-springmvc</module>
+		<module>aplikasi-manajemen-peserta-rest-client</module>
   </modules>
 
     <!-- Shared version number properties -->
     <properties>
-        <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+        <org.springframework.version>3.0.6.RELEASE</org.springframework.version>
   	    <org.hibernate.version>3.6.0.Final</org.hibernate.version>
         <org.slf4j.version>1.6.1</org.slf4j.version>
         <ch.qos.logback.version>0.9.27</ch.qos.logback.version>

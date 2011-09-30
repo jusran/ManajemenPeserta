@@ -10,7 +10,7 @@
 
 	<artifactId>aplikasi-manajemen-peserta-springmvc</artifactId>
 	<packaging>war</packaging>
-	<name>UI Spring-MVC</name>
+	<name>Expose Service REST Spring-MVC </name>
 	
 	<dependencies>
 		<dependency>
